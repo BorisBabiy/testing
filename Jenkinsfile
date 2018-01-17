@@ -9,12 +9,12 @@ properties([
 
 try {
   node ('master') {
-    stage ('Notify') {
-      SlackChannelNotifications.send('STARTED')
-    }
-    
     stage ('Checkout') {
       git 'git@github.com:BorisBabiy/testing.git'
+    }
+    
+    stage ('Notify') {
+      SlackChannelNotifications.send('STARTED')
     }
     
     stage ('Build') {
