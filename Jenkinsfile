@@ -28,6 +28,10 @@ try {
     stage ('Deploy') {
       echo 'Deploy...'
     }
+    
+    stage('Failure') {
+      exit 1
+    }
   }
 } catch (e) {
   currentBuild.result = 'FAILED'
