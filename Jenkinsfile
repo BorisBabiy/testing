@@ -1,6 +1,7 @@
 @Library('contract-managment@feature/QCMD-28') import com.mev.*
 
 def SlackChannelNotifications = new SlackChannelNotifications(this)
+def EmailNotifications = new EmailNotifications(this)
 
 properties([
   disableConcurrentBuilds(), /* Do not allow concurent builds */
@@ -38,4 +39,5 @@ try {
   throw e
 } finally {
   SlackChannelNotifications.send(currentBuild.result)
+  EmailNotifications.send(currentBuild.result)
 }
