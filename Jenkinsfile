@@ -31,7 +31,7 @@ try {
     }
     
     stage('Failure') {
-      /* sh 'exit 1' */
+      sh 'exit 1'
     }
   }
 } catch (e) {
