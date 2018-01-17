@@ -12,6 +12,22 @@ try {
     stage ('Notify') {
       SlackChannelNotifications.send('STARTED')
     }
+    
+    stage ('Checkout') {
+      git 'git@github.com:BorisBabiy/testing.git'
+    }
+    
+    stage ('Build') {
+      echo 'Build...'
+    }
+    
+    stage ('Test') {
+      echo 'Test...'
+    }
+    
+    stage ('Deploy') {
+      echo 'Deploy...'
+    }
   }
 } catch (e) {
   currentBuild.result = 'FAILED'
