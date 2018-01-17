@@ -1,6 +1,6 @@
 @Library('contract-managment@feature/QCMD-28') import com.mev.*
 
-def SlackChannelNotifications = SlackChannelNotifications(this)
+def SlackChannelNotifications = new SlackChannelNotifications(this)
 
 properties([
   disableConcurrentBuilds(), /* Do not allow concurent builds */
