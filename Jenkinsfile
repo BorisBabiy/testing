@@ -30,11 +30,12 @@ try {
     }
     
     stage('Failure') {
-      exit 1
+      sh 'exit 1'
     }
   }
 } catch (e) {
   currentBuild.result = 'FAILED'
+  throw e
 } finally {
   SlackChannelNotifications.send(currentBuild.result)
 }
