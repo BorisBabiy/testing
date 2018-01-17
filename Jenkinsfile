@@ -32,6 +32,7 @@ try {
     
     stage('Failure') {
       echo "something"
+      echo "one"
       /* sh 'exit 1' */
     }
   }
